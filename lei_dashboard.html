@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<!-- Boxicons -->
+
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="lei_dashboard.css">
@@ -121,7 +121,7 @@
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
 						<h3>5</h3>
-						<p>New Order</p>
+						<p>New Orders</p>
 					</span>
 				</li>
 				<li>
@@ -133,10 +133,12 @@
 				</li>
 				<li>
 					<i class='bx bxs-dollar-circle' ></i>
-					<span class="text">
-						<h3>₱25,543</h3>
-						<p>Total Sales</p>
-					</span>
+					 <div class="stats">
+						<span class="text">
+							<h3 id="total-sales">₱0.00</h3>
+							<p>Total Sales per Month</p>
+						</span>
+					</div>
 				</li>
 			</ul>
 
@@ -229,13 +231,29 @@
 						</li>
 					</ul>
 				</div>
-			</div>
-		</main>
-		<!-- MAIN -->
-	</section>
-	<!-- CONTENT -->
-	
+			
+				
+				<div class="table-data">
+					<!-- Order Status Graph -->
+					<div class="chart-container">
+						<canvas id="orderStatusChart"></canvas>
+					</div>
+				
+				
+				
+					<!-- Sales Graph (Bar Chart) -->
+					<div class="chart-container">
+						<canvas id="salesChart"></canvas>
+					</div>
+				</div>
+				
+				
+				</body>
+				</html>
+				
 
+				
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="lei_dashboard.js"></script>
 </body>
 </html>
