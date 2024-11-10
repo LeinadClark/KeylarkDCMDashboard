@@ -308,11 +308,55 @@ body {
 }
 /* NAVBAR */
 
+/*Glitch Effects for DCM Courses*/
 
+.glitch {
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    z-index: 1;
+ }
+ .glitch:before,
+ .glitch:after {
+    display: block;
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+ }
+ .glitch:before {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #0ff;
+    z-index: -1;
+ }
+ .glitch:after {
+    animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #ff00ff;
+    z-index: -2;
+ }
+ @keyframes glitch-color {
+    0% {
+       transform: translate(0);
+    }
+ 
+    20% {
+       transform: translate(0px, 3px);
+    }
+ 
+    40% {
+       transform: translate(0px, -3px);
+    }
+    to {
+       transform: translate(0);
+    }
+ }
 
 
 
 /* MAIN */
+
 #content main {
 	width: 100%;
 	padding: 36px 24px;
@@ -361,7 +405,6 @@ body {
 	grid-gap: 10px;
 	font-weight: 500;
 }
-
 
 
 
@@ -522,11 +565,20 @@ body {
 	margin-bottom: 0;
 }
 /* MAIN */
-/* CONTENT */
 
 
+/* Chart Container Styling */
+.chart-container {
+	display: inline-block;
+	width: 48%; /* 50% width minus some space for padding */
+	padding: 20px;
+	box-sizing: border-box;
+}
 
-
+#orderStatusChart, #coursePreferenceChart, #salesChart {
+	width: 100%;
+	height: 300px; /* Adjust height of the chart as needed */
+}
 
 
 
@@ -596,3 +648,4 @@ body {
 		min-width: 420px;
 	}
 }
+
